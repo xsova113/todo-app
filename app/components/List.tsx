@@ -79,7 +79,8 @@ const List = () => {
           >
             <input
               type="text"
-              className={`flex outline-none w-[85%] h-[55px] rounded-md transition dark:bg-[#25273C] dark:text-[#CACDE8] bg-white`}
+              placeholder="Create a new todo..."
+              className={`flex outline-none w-[85%] h-[55px] placeholder:text-gray-500 placeholder:font-semibold rounded-md transition dark:bg-[#25273C] dark:text-[#CACDE8] bg-white`}
               {...register("title")}
             />
             <button
