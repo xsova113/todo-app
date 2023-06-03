@@ -3,6 +3,7 @@ import { getActiveList } from "../serverAction/getActiveList";
 import { getAllList } from "../serverAction/getAllList";
 import { deleteAllList } from "../serverAction/deleteAllList";
 import { getCompletedList } from "../serverAction/getCompletedList";
+import { useEffect } from "react";
 
 interface TodoProps {
   list?: Todo[];
@@ -20,7 +21,8 @@ const FilterBox: React.FC<TodoProps> = ({ list, setList }) => {
     setList(list);
   }
 
-  async function ActiveList() {
+
+  const activeList = async () => {
     const activeList = await getActiveList();
     setList(activeList);
   }
@@ -41,7 +43,7 @@ const FilterBox: React.FC<TodoProps> = ({ list, setList }) => {
             <button className="hover:text-[#4e78cd]" onClick={allList}>
               All
             </button>
-            <button className="hover:text-[#4e78cd]" onClick={ActiveList}>
+            <button className="hover:text-[#4e78cd]" onClick={activeList}>
               Active
             </button>
             <button className="hover:text-[#4e78cd]" onClick={completedList}>

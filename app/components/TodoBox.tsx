@@ -30,7 +30,7 @@ const TodoBox: React.FC<TodoBoxProps> = ({ item, index, handleDelete }) => {
       <div
         className={` w-full text-[13px] transition dark:bg-[#25273C] dark:text-[#CACDE8] dark:border-gray-700 bg-white border-gray-100 ${
           index === 0 && "rounded-t-md"
-        } shadow-2xl border-b`}
+        } shadow-2xl border-b group`}
       >
         <div className=" flex items-center justify-end">
           <div
@@ -70,7 +70,7 @@ const TodoBox: React.FC<TodoBoxProps> = ({ item, index, handleDelete }) => {
             className="absolute mr-3 opacity-30"
             onClick={() => handleDelete(item.id)}
           >
-            <BsX size={30} />
+            <BsX size={30} className="hidden group-hover:block" />
           </button>
         </div>
       </div>
